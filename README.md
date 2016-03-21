@@ -7,14 +7,14 @@
 直接将工程里的ExpandMenu文件夹拖入你的项目，在你需要添加的文件中引入ExpandMenu.h
 
 ##例子
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
-    view.backgroundColor=[UIColor orangeColor];
-    menu=[[ExpandMenu alloc] init];
-    [menu setExpandMenu:view Width:[UIScreen mainScreen].bounds.size.width*2/3 VC:self];
-}
+    -(void)viewWillAppear:(BOOL)animated
+    {
+      [super viewWillAppear:animated];
+      UIView *view=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 300)];
+       view.backgroundColor=[UIColor orangeColor];
+       menu=[[ExpandMenu alloc] init];
+       [menu setExpandMenu:view Width:[UIScreen mainScreen].bounds.size.width*2/3 VC:self];
+    }
 
 ##注意
 目前用的是navigationController.view来做页面的偏移，所以需要在有navigationController作为父VC的情况在，在viewWillAppear里面添加菜单的初始化才有效。
